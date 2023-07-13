@@ -1,0 +1,600 @@
+
+/* ESTILO DE FUENTES  */
+@import url('https://fonts.googleapis.com/css2?family=Nova+Slim&family=Nunito:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital@1&display=swap');
+* {
+    margin         : 0;
+    padding        : 0;
+    box-sizing     : border-box;
+    font-family    :  sans-serif;
+    text-decoration: none;
+    list-style: none;
+
+}
+html{
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Open Sans', sans-serif; 
+    width             : 100%;
+    height            : 100%;
+    font-size         : 16px;
+    display           : flex;
+    flex-direction    : column;
+    min-height        : 100%;
+    background-color: #fff;
+}
+
+
+/* Scroll Personalizado */
+
+body::-webkit-scrollbar {
+    width: 15px;
+
+}
+body::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    border: 2px solid #751143;
+    background   : rgba(117, 17, 67, 0.6);
+
+}
+body::-webkit-scrollbar-thumb:hover {
+    background   : #751143;
+
+}
+body::-webkit-scrollbar-track{
+    background   : rgb(0, 1, 35, 1);
+}
+
+
+
+
+
+/*   Header   */
+
+header{
+    position: absolute;
+    top: 1rem;
+    left: 55%;
+    align-items: center;
+    max-width      : 1100px;
+    height         : 100%;
+    margin         : auto;
+}
+.content{
+    position: relative;
+    width: 100%;
+    height: 95vh;
+    background: #111;
+    color: #fff;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-image: url(../img/encabezado/game.png);
+}
+.nav-btn{
+    width          : 50px;
+    height         : 50px;
+    position       : absolute;
+    right          : 20px;
+    font-size      : 20px;
+    border-radius  : 25%;
+    color          : #ffffff;
+    display        : none;
+    justify-content: center;
+    align-items    : center;
+    cursor         : pointer;
+}
+.nav-btn:hover {
+    opacity: 0.7;
+}
+.nav_list{
+        display: flex;
+        align-items: center;
+}
+.nav_list ul{
+        list-style: none;
+        display: flex;
+}
+.nav_list li{
+    display    : flex;
+    position   : relative;
+    list-style : none;
+    margin     : 10px;
+    right: -40%;
+
+}
+.nav_list a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 900;
+    transition     : all .2s ease-in-out;
+    text-decoration: none;
+}
+.nav_list a::before {
+    content   : "";
+    height    : 5%;
+    width     : 0%;
+    background: #ad1963;
+    position  : absolute;
+    left      : 0;
+    bottom    : -1px;
+    transition: 0.3s ease-out;
+}
+.nav_list a:hover::before {
+    width: 100%;
+}
+.descripcion{
+    position: relative;
+    top: 50%;
+    left: 1.2rem;
+    width: 100%;
+    height: 50%;
+}
+.content  h3{
+    margin: 10px;
+    font-size: 90px;
+    padding: 9px;
+    position: relative;
+    margin-top: 10%;
+    left: 4rem;
+}
+ /* Reglas de estilo para pantallas más pequeñas */
+ @media screen and (max-width: 1100px){
+    header {
+        left: 0;
+        right: 0;
+        width:100%;
+        padding: 0 20px;
+        background-position: -100px;
+    }
+    .content {
+        padding: 50px;
+        height: auto;
+        padding-top: 100px;
+        background-position: center; 
+    }
+    .nav_list li{
+        margin-top: 20px;
+        right: -34%;
+        margin     : 10px;
+    }
+    .content h3 {
+        font-size: 90px;
+        top: -65px;
+        left: 1rem;
+    }
+}
+@media screen and (max-width: 800px){
+    .nav{
+        background: rgba(0, 0, 0, 0.9);
+        display: none;
+        position: absolute;
+        right: 0px;
+        top: -50px;
+        padding: 60px 0px 60px 0px;  
+    }
+    .nav.show {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        z-index: 1;
+        width: 50%;
+    }
+    .nav ul {
+        flex-direction: column;
+    }
+    .nav li{
+        right: 0;
+        margin: 10px;
+    }
+    .nav-btn{
+        width: 50px;
+        cursor: pointer;
+        transition: all 100ms;
+        display: block;
+        top: 2rem;
+        border: 1px solid #ffffff;
+        background: rgba(3, 3, 3, 0.0);
+    }
+    .nav-btn:hover{
+        background: rgba(10, 10, 10, 0.9);
+    }
+    .nav-btn span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin-left: 12px;
+        background-color: #ffffff;
+        margin-bottom: 5px;
+    }   
+    .content h3 {
+        margin-top: 50px;
+        font-size: 60px;
+        top: -60px;
+        left: 1rem;
+      }
+}
+
+
+/* Presentaciòn */
+.conta{
+    height: 600px;
+    width: 100%; 
+	background-image: url(../img/encabezado/game1.png);
+	background-size: cover;
+	background-position: center;
+}
+.encabezado{
+    padding: 20px ;
+    text-align: center;
+    margin-top: 0;
+}
+.title{
+    font-size: 39px;
+    font-weight: 900;
+    margin-top: 100px;
+    margin-bottom: 0px;
+    color: #fffefe;
+    font-family: Nova slim;
+}
+.parrafo{
+    margin-top: 50px;
+    font-size: 24px;
+    color: #ffffff;
+}
+.parra{
+    margin-top: 70px;
+    font-size: 25px;
+    text-align: center;
+    color: #ad1963;
+    font-weight: 600;
+}
+
+/* perfil */
+.container{
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    padding: 20px 10px;
+    position: relative;
+    background-image: url(../img/encabezado/game2.3.4.5.png);
+	background-size: cover;
+	background-position: center;
+}
+.color-acento{
+    color: #d1b672;
+}
+.container .text{
+    width: 500px;
+    padding: 20px;
+    text-align:left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container .text h2{
+    margin-bottom: 25px;
+    margin-top: 0px;
+    font-weight: 900; 
+    color: #ad1963;
+    font-size: 30px;
+    font-family: Nova slim;
+}
+.container .text p{
+    font-family: Nunito;
+    font-weight: 400;
+    font-size: 19px;
+}
+.img-container1{
+    height: 500px;
+    width: 500px; 
+    padding: 50px;
+    margin: 20px;
+	background-image: url(../img/encabezado/game2.png);
+	background-size: cover;
+	background-position: center;
+}
+.img-container2{
+    height: 500px;
+    width: 500px; 
+    padding: 50px;
+    margin: 20px;
+	background-image: url(../img/encabezado/game3.png);
+	background-size: cover;
+	background-position: center;
+}
+.img-container3{
+    height: 500px;
+    width: 500px; 
+    padding: 50px;
+    margin: 20px;
+	background-image: url(../img/encabezado/game4.png);
+	background-size: cover;
+	background-position: center;
+}
+.container a{
+    display: block;
+    width: 50%;
+    margin: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 14px;
+    max-width: 200px;
+    transition: .2s linear;
+}
+.container .text a{
+    color: #ad1963;
+    border-radius: 15px ;
+    font-size: 17px;
+    border: 1px solid #ad1963;
+}
+.container .text a:hover{
+    color: #fff;
+    transition: 0.7s;
+    box-shadow: 2px 2px 9px rgba(255, 255, 255, 0.9);
+    background-color:#ad1963;
+}
+@media screen and (max-width:1100px){
+
+    .container .text{
+        width: 50%;
+        padding: 20px;
+    }
+
+}
+@media screen and (max-width:800px){
+
+    .container .text{
+        width: 50%;
+        padding: 20px;
+    }
+    
+    .container .img-container1{
+        display: none;
+    }
+    .container .img-container2{
+        display: none;
+    }
+    .container .img-container3{
+        display: none;
+    }
+
+}
+
+
+
+/*   Comentarios   */
+.conte{
+    position: relative;
+    background-image: url(../img/encabezado/game2.3.4.5.png);
+	background-size: cover;
+	background-position: center;
+    margin-top: 0;
+    
+}
+.encabezado .titulo{
+    font-size: 50px;
+    font-weight: 800;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    color: #fffefe;
+    font-family: Nova;
+}
+.grupo_box{
+    width                : 100%;
+    max-width            : 900px;
+    margin               : auto;
+    display              : flex;
+    grid-gap             : 50px;
+    padding              : 45px;
+}
+.box h2 {
+    color        : #ad1963;
+    margin-bottom: 25px;
+    font-size    : 20px;
+}
+.box p {
+    color        : #fff;
+    margin-bottom: 10px;
+}
+@media screen and (max-width:800px){
+    .grupo_box{
+        width                : 100%;
+        max-width            : 400px;
+        margin               : 50px;
+        display              : flex;
+        flex-direction       : column;
+        grid-gap             : 50px;
+        padding              : 20px;
+        height               : 90%;
+    }
+    .conte{
+        height: 1100px;
+    }
+}
+
+/*   Promoción   */
+.container0{
+    margin-top: 0;
+    color: white;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-image: url(../img/encabezado/game6.png);
+	background-size: cover;
+	background-position: center;
+    height: 600px;
+    
+}
+.texto h2{
+    font-size: 40px;
+    font-weight: 400;
+    color: #fffefe;
+    font-family: Nova;
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+
+
+/*   Footer   */
+footer{
+    position: relative;
+    width: 100%;
+    background: #751143;
+    min-height: 100px;
+    padding: 20px, 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: auto;
+}
+footer .social_icon, 
+footer .menu{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+footer .social_icon li,
+footer .menu li{
+    list-style: none;
+}
+footer .social_icon li a{
+    font-size: 2em;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+}
+footer .social_icon li a:hover{
+    transform: translateY(-10px);
+}
+footer .menu li a{
+    font-size: 1.2em;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    text-decoration: none;
+    opacity: 0.75;
+}
+footer .menu li a:hover{
+    opacity: 1;
+}
+footer p{
+    color: #fff;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+footer .wave{
+    position: absolute;
+    top: -45px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background:  url(../img/footer/wave1.png); 
+    background-size: 1000px 100px;
+}
+footer .wave #wave1{
+    z-index: 98;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWave 4s linear infinite;
+}
+footer .wave #wave2{
+    z-index: 97;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animateWave_2 4s linear infinite;
+}
+footer .wave #wave3{
+    z-index: 98;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animateWave 3s linear infinite;
+}
+footer .wave #wave4{
+    z-index: 97;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animateWave_2 3s linear infinite;
+}
+@keyframes animateWave{
+    0%{
+        background-position-x: 1000px;
+    }
+    100%{
+        background-position-x: 0px;
+    }
+}
+@keyframes animateWave_2{
+    0%{
+        background-position-x: 0px;
+    }
+    100%{
+        background-position-x: 1000px;
+    }
+}
+@media screen and (min-width: 800){
+    footer .wave{
+        position: absolute;
+        top: -45px;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background:  url(../img/footer/wave1.png); 
+        background-size: 700px 100px;
+    }
+    @keyframes animateWave{
+        0%{
+            background-position-x: 700px;
+        }
+        100%{
+            background-position-x: 0px;
+        }
+    }
+    @keyframes animateWave_2{
+        0%{
+            background-position-x: 0px;
+        }
+        100%{
+            background-position-x: 700px;
+        }
+    }
+    footer p{
+        color: #fff;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-size: 1.1em;
+        padding: 30px;
+    }
+}
+@media screen and (max-width: 1100){
+    footer .wave{
+        background-size: 900px 100px;
+    }
+    @keyframes animateWave{
+        0%{
+            background-position-x: 900px;
+        }
+        100%{
+            background-position-x: 0px;
+        }
+    }
+    @keyframes animateWave_2{
+        0%{
+            background-position-x: 0px;
+        }
+        100%{
+            background-position-x: 900px;
+        }
+    }
+}
