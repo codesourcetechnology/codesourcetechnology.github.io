@@ -1,0 +1,444 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+}
+
+
+/* Scroll Personalizado */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #272727;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(3, 253, 16, 0.5);
+    border-radius: 10px;
+    transition: background 0.5s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #03fd10;
+}
+
+body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #272727;
+}
+
+main {
+    flex: 1;
+    /* Ocupa todo el espacio restante */
+}
+
+
+/* Media Queries para diseño responsive */
+
+
+/* Para pantallas pequeñas */
+
+@media (max-width: 768px) {
+    /* Agrega estilos específicos para pantallas pequeñas */
+    body {
+        font-size: 14px;
+        /* Tamaño de fuente más pequeño */
+    }
+}
+
+
+/* Para pantallas medianas y grandes */
+
+@media (min-width: 769px) {
+    /* Agrega estilos específicos para pantallas medianas y grandes */
+    body {
+        font-size: 16px;
+        /* Tamaño de fuente estándar */
+    }
+}
+
+
+/* Estilos comunes para el header */
+
+.mainContent {
+    height: 100%;
+    width: 100%;
+}
+
+.headerContainer {
+    height: 8vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #1b1b1b;
+    z-index: 101;
+    /* Ajuste de contraste */
+    color: #ffffff;
+    /* Color de texto */
+}
+
+.headerContent {
+    width: 85%;
+    height: 100%;
+    margin: 0 auto;
+    /* Simplificación del centrado horizontal */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoContainer {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.logo {
+    height: 100%;
+    color: #03fd10;
+    font-size: 2rem;
+    /* Ajuste de tamaño de fuente */
+    margin-top: 0.5rem;
+    /* Ajuste de espaciado */
+    /* Evitar estilos específicos de dimensiones para hacer más adaptable */
+}
+
+
+/* Media Queries para diseño responsive */
+
+
+/* Para pantallas pequeñas */
+
+@media (max-width: 768px) {
+    .headerContainer {
+        height: 10vh;
+        /* Ajuste de altura para pantallas pequeñas */
+    }
+    .headerContent {
+        width: 95%;
+        /* Mejora del espacio horizontal en pantallas pequeñas */
+    }
+    .logoContainer {
+        margin-top: 60px;
+    }
+    .logo {
+        margin-top: -15px;
+        font-size: 1.5rem;
+        /* Ajuste de tamaño de fuente para pantallas pequeñas */
+    }
+}
+
+
+/* Para pantallas medianas y grandes */
+
+@media (min-width: 769px) {
+    .headerContainer {
+        height: 8vh;
+        /* Restaurar altura original para pantallas medianas y grandes */
+    }
+    .headerContent {
+        width: 85%;
+        /* Restaurar ancho original para pantallas medianas y grandes */
+    }
+    .logo {
+        margin-top: -15px;
+        font-size: 1.5rem;
+        /* Restaurar tamaño de fuente original para pantallas medianas y grandes */
+    }
+}
+
+
+/* Menú Normal */
+
+.menuContainer {
+    display: flex;
+    gap: 2rem;
+    /* Ajuste del espacio entre elementos */
+    align-items: center;
+    /* Centra verticalmente los elementos */
+}
+
+.menuItem {
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+    /* Ajuste de margen izquierdo para separación uniforme */
+    margin-left: 3vw;
+    /* Ajuste según el diseño */
+}
+
+.menuItemLink {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+    /* Reducción de la duración de la transición */
+}
+
+.menuItemLink:hover {
+    color: #03fd10;
+}
+
+
+/* Media Queries para diseño responsive */
+
+
+/* Para pantallas pequeñas */
+
+@media (max-width: 768px) {
+    .menuContainer {
+        display: none;
+        flex-direction: column;
+        /* Coloca los elementos en columna */
+        gap: 1rem;
+        /* Reduce el espacio entre elementos en pantallas pequeñas */
+    }
+    .menuItem {
+        margin-left: 0;
+        /* Elimina el margen izquierdo en pantallas pequeñas */
+        margin-bottom: 1rem;
+        /* Añade espacio inferior entre elementos en pantallas pequeñas */
+    }
+    #Menu {
+        background-color: #0e0e0ef6;
+        position: absolute;
+        top: 0vh;
+        width: 50%;
+        padding-left: -30%;
+        padding-top: 60px;
+        height: 100vh;
+        right: -110%;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.7s;
+    }
+    #Menu.open {
+        right: 0;
+    }
+    .menuItem {
+        margin-top: 3vh;
+    }
+    .menuItemLink {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* Menú Hamburguesa (MOBILE ONLY) */
+
+.menuHamburguer {
+    display: none;
+    /* Oculta el botón en pantallas grandes por defecto */
+}
+
+.menuHamburguer.open {
+    display: flex;
+    /* Muestra el botón al estar abierto */
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 3rem;
+    /* Tamaño del botón hamburguesa */
+    height: 3rem;
+    /* Tamaño del botón hamburguesa */
+    border-radius: 100px;
+    /* Forma de círculo */
+    background-color: transparent;
+    /* Fondo transparente */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 102;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.menuHamburguer:hover {
+    transform: scale(1.1);
+    /* Efecto de escala al pasar el ratón */
+}
+
+.line {
+    position: absolute;
+    width: 80%;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50px;
+    transition: transform 0.5s ease;
+}
+
+.menuHamburguer .line:first-child {
+    top: 40%;
+}
+
+.menuHamburguer .line:nth-child(2) {
+    top: 50%;
+}
+
+.menuHamburguer .line:last-child {
+    top: 60%;
+}
+
+
+/* Girar las líneas para formar una "X" cuando se abre el menú */
+
+.menuHamburguer.open .line:nth-child(1) {
+    top: 50%;
+    left: 22%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.menuHamburguer.open .line:nth-child(2) {
+    opacity: 0;
+}
+
+.menuHamburguer.open .line:nth-child(3) {
+    top: 50%;
+    left: 22%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+
+/* Media query para pantallas pequeñas */
+
+@media (max-width: 768px) {
+    .menuHamburguer {
+        display: block;
+        /* Muestra el botón en pantallas pequeñas */
+        width: 40px;
+        /* Ajuste del ancho del botón */
+        height: 50%;
+        /* Altura del botón */
+        cursor: pointer;
+        transition: all 100ms;
+        border: 1px solid #ffff;
+        background: rgba(3, 3, 3, 0.0);
+        border-radius: 50px;
+        /* Borde redondeado */
+    }
+    .menuHamburguer.open {
+        background-color: rgba(0, 0, 0, 0.3);
+        /* Fondo semi-transparente cuando está abierto */
+    }
+    .menuHamburguer:hover span {
+        background: #03fd10;
+    }
+    .menuHamburguer span {
+        display: block;
+        width: 15px;
+        height: 1px;
+        margin-left: 12px;
+        background-color: #fff;
+    }
+}
+
+
+/* Encabezado */
+
+.header {
+    position: relative;
+    height: 94vh;
+    /* Ajusta la altura según tus necesidades */
+    overflow: hidden;
+}
+
+.video-container {
+    position: relative;
+    overflow: hidden;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+#headerVideo {
+    position: absolute;
+    width: 100%;
+    height: 94vh;
+    /* Mantiene el mismo tamaño de altura que el contenedor principal */
+    object-fit: cover;
+    /* Ajusta el tamaño del video para cubrir el contenedor */
+}
+
+.svg-hero {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    /* Ajustes para pantallas pequeñas */
+    .header {
+        height: 100vh;
+        /* Ajusta la altura para ocupar toda la pantalla en dispositivos móviles */
+    }
+    #headerVideo {
+        height: 100%;
+        /* Ajusta el video para ocupar toda la altura del contenedor */
+    }
+}
+
+
+/*legal*/
+
+section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    background: rgba(14, 14, 14, 1);
+}
+
+h1,
+h2 {
+    color: #ccc;
+    font-size: calc(0.5vw + 28px);
+    font-weight: 900;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+a {
+    color: #03fd10;
+}
+
+p {
+    color: #ccc;
+}
+
+#fechaVigencia {
+    color: #03fd10;
+}
+
+#nombreSitio {
+    color: #ccc;
+    font-weight: bold;
+}
+
+ul {
+    color: #ccc;
+    list-style-type: none;
+    padding: 0;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+span {
+    font-weight: bold;
+}

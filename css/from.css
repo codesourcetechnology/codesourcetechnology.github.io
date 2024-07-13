@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* Scroll Personalizado */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(3, 253, 16, 0.5);
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(3, 253, 16);
+}
+
+body {
+    min-height: 100vh;
+    background: url(../img/encabezado/cookies.webp) no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* Añadido para ajustar el fondo correctamente */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.68);
+}
+
+
+/*form*/
+
+.contact-section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* Added for better responsiveness */
+    padding: 20px;
+    /* Added padding for spacing */
+}
+
+.contact-info {
+    color: #ffffff;
+    max-width: 500px;
+    line-height: 1.5;
+    /* Adjusted for better readability */
+    padding: 20px;
+    /* Changed padding for consistency */
+    font-size: 18px;
+    flex: 1;
+}
+
+.contact-info i {
+    padding: 20px;
+    color: #03fd10;
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+.contact-form {
+    max-width: 700px;
+    padding: 20px;
+    /* Changed padding for consistency */
+    flex: 1;
+}
+
+#trucazo {
+    opacity: 0;
+}
+
+.contact-form h2 {
+    color: #fff;
+    text-align: center;
+    font-size: calc(0.5vw + 28px);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-weight: 900;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.contact-form .text-box {
+    background: #000;
+    color: #fff;
+    border: none;
+    width: calc(50% - 10px);
+    height: 50px;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgb(0, 255, 13);
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.contact-form .text-box:first-child {
+    margin-right: 15px;
+}
+
+.contact-form textarea {
+    background: #000;
+    color: #fff;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    min-height: 200px;
+    max-height: 400px;
+    resize: vertical;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.contact-form .send-btn {
+    float: right;
+    background: #03fd108a;
+    color: #fff;
+    border: none;
+    width: 120px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-form .send-btn:hover {
+    background: #03fd10;
+}
+
+.back-arrow {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    text-decoration: none;
+    color: #03fd10;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.back-arrow:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 950px) {
+    .contact-section {
+        flex-direction: column;
+        padding: 10px;
+        /* Added padding for spacing */
+    }
+    .contact-info,
+    .contact-form {
+        margin: 30px 20px;
+    }
+    .contact-form h2 {
+        font-size: 28px;
+        /* Adjusted font size for smaller screens */
+    }
+    .contact-form .text-box {
+        width: 100%;
+    }
+    .contact-form .send-btn {
+        width: 100%;
+        margin-top: 10px;
+        /* Added margin for spacing */
+    }
+}
+
+
+/* CSS for alert messages */
+
+.alert-success,
+.alert-error {
+    z-index: 1;
+    font-size: 18px;
+    padding: 20px 40px;
+    min-width: 300px;
+    /* Adjusted min-width for better fit */
+    position: fixed;
+    right: 10px;
+    /* Adjusted position for better spacing */
+    top: 10px;
+    border-radius: 4px;
+    display: flex;
+    /* Added flex for better layout */
+    align-items: center;
+}
+
+.alert-success {
+    background: #d4edda;
+    border-left: 8px solid #03fd10;
+}
+
+.alert-error {
+    background: #fff3cd;
+    border-left: 8px solid #fda503;
+}

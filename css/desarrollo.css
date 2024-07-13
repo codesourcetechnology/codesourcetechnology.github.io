@@ -1,0 +1,1274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+}
+
+
+/* Scroll Personalizado */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #272727;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(3, 253, 16, 0.5);
+    border-radius: 10px;
+    transition: background 0.5s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #03fd10;
+}
+
+body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    /* Ocupa todo el espacio restante */
+}
+
+
+/* Media Queries para diseño responsive */
+
+
+/* Para pantallas pequeñas */
+
+@media (max-width: 768px) {
+    /* Agrega estilos específicos para pantallas pequeñas */
+    body {
+        font-size: 14px;
+        /* Tamaño de fuente más pequeño */
+    }
+}
+
+
+/* Para pantallas medianas y grandes */
+
+@media (min-width: 769px) {
+    /* Agrega estilos específicos para pantallas medianas y grandes */
+    body {
+        font-size: 16px;
+        /* Tamaño de fuente estándar */
+    }
+}
+
+
+/* Estilos comunes para el header */
+
+.mainContent {
+    height: 100%;
+    width: 100%;
+}
+
+.headerContainer {
+    height: 8vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #1b1b1b;
+    z-index: 101;
+    /* Ajuste de contraste */
+    color: #ffffff;
+    /* Color de texto */
+}
+
+.headerContent {
+    width: 85%;
+    height: 100%;
+    margin: 0 auto;
+    /* Simplificación del centrado horizontal */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoContainer {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.logo {
+    height: 100%;
+    color: #03fd10;
+    font-size: 2rem;
+    /* Ajuste de tamaño de fuente */
+    margin-top: 0.5rem;
+    /* Ajuste de espaciado */
+    /* Evitar estilos específicos de dimensiones para hacer más adaptable */
+}
+
+
+/* Media Queries para diseño responsive */
+
+
+/* Para pantallas pequeñas */
+
+@media (max-width: 768px) {
+    .headerContainer {
+        height: 10vh;
+        /* Ajuste de altura para pantallas pequeñas */
+    }
+    .headerContent {
+        width: 95%;
+        /* Mejora del espacio horizontal en pantallas pequeñas */
+    }
+    .logoContainer {
+        margin-top: 60px;
+    }
+    .logo {
+        margin-top: -15px;
+        font-size: 1.5rem;
+        /* Ajuste de tamaño de fuente para pantallas pequeñas */
+    }
+}
+
+
+/* Para pantallas medianas y grandes */
+
+@media (min-width: 769px) {
+    .headerContainer {
+        height: 8vh;
+        /* Restaurar altura original para pantallas medianas y grandes */
+    }
+    .headerContent {
+        width: 85%;
+        /* Restaurar ancho original para pantallas medianas y grandes */
+    }
+    .logo {
+        margin-top: -15px;
+        font-size: 1.5rem;
+        /* Restaurar tamaño de fuente original para pantallas medianas y grandes */
+    }
+}
+
+
+/* Menú Normal */
+
+.menuContainer {
+    display: flex;
+    gap: 2rem;
+    /* Ajuste del espacio entre elementos */
+    align-items: center;
+    /* Centra verticalmente los elementos */
+}
+
+.menuItem {
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+    /* Ajuste de margen izquierdo para separación uniforme */
+    margin-left: 3vw;
+    /* Ajuste según el diseño */
+}
+
+.menuItemLink {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+    /* Reducción de la duración de la transición */
+}
+
+.menuItemLink:hover {
+    color: #03fd10;
+}
+
+
+/* Media Queries para diseño responsive */
+
+
+/* Para pantallas pequeñas */
+
+@media (max-width: 768px) {
+    .menuContainer {
+        display: none;
+        flex-direction: column;
+        /* Coloca los elementos en columna */
+        gap: 1rem;
+        /* Reduce el espacio entre elementos en pantallas pequeñas */
+    }
+    .menuItem {
+        margin-left: 0;
+        /* Elimina el margen izquierdo en pantallas pequeñas */
+        margin-bottom: 1rem;
+        /* Añade espacio inferior entre elementos en pantallas pequeñas */
+    }
+    #Menu {
+        background-color: #0e0e0ef6;
+        position: absolute;
+        top: 0vh;
+        width: 40%;
+        padding-left: 5%;
+        padding-top: 60px;
+        height: 92vh;
+        right: -100%;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.7s;
+    }
+    #Menu.open {
+        right: 0;
+    }
+    .menuItem {
+        margin-top: 3vh;
+    }
+    .menuItemLink {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* Menú Hamburguesa (MOBILE ONLY) */
+
+.menuHamburguer {
+    display: none;
+    /* Oculta el botón en pantallas grandes por defecto */
+}
+
+.menuHamburguer.open {
+    display: flex;
+    /* Muestra el botón al estar abierto */
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 3rem;
+    /* Tamaño del botón hamburguesa */
+    height: 3rem;
+    /* Tamaño del botón hamburguesa */
+    border-radius: 100px;
+    /* Forma de círculo */
+    background-color: transparent;
+    /* Fondo transparente */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 102;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.menuHamburguer:hover {
+    transform: scale(1.1);
+    /* Efecto de escala al pasar el ratón */
+}
+
+.line {
+    position: absolute;
+    width: 80%;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50px;
+    transition: transform 0.5s ease;
+}
+
+.menuHamburguer .line:first-child {
+    top: 40%;
+}
+
+.menuHamburguer .line:nth-child(2) {
+    top: 50%;
+}
+
+.menuHamburguer .line:last-child {
+    top: 60%;
+}
+
+
+/* Girar las líneas para formar una "X" cuando se abre el menú */
+
+.menuHamburguer.open .line:nth-child(1) {
+    top: 50%;
+    left: 22%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.menuHamburguer.open .line:nth-child(2) {
+    opacity: 0;
+}
+
+.menuHamburguer.open .line:nth-child(3) {
+    top: 50%;
+    left: 22%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+
+/* Media query para pantallas pequeñas */
+
+@media (max-width: 768px) {
+    .menuHamburguer {
+        display: block;
+        /* Muestra el botón en pantallas pequeñas */
+        width: 40px;
+        /* Ajuste del ancho del botón */
+        height: 50%;
+        /* Altura del botón */
+        cursor: pointer;
+        transition: all 100ms;
+        border: 1px solid #ffff;
+        background: rgba(3, 3, 3, 0.0);
+        border-radius: 50px;
+        /* Borde redondeado */
+    }
+    .menuHamburguer.open {
+        background-color: rgba(0, 0, 0, 0.3);
+        /* Fondo semi-transparente cuando está abierto */
+    }
+    .menuHamburguer:hover span {
+        background: #03fd10;
+    }
+    .menuHamburguer span {
+        display: block;
+        width: 15px;
+        height: 1px;
+        margin-left: 12px;
+        background-color: #fff;
+    }
+}
+
+
+/* Encabezado */
+
+.header {
+    position: relative;
+    height: 94vh;
+    /* Ajusta la altura según tus necesidades */
+    overflow: hidden;
+}
+
+.video-container {
+    position: relative;
+    overflow: hidden;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#headerVideo {
+    position: absolute;
+    width: 100%;
+    height: 94vh;
+    /* Mantiene el mismo tamaño de altura que el contenedor principal */
+    object-fit: cover;
+    /* Ajusta el tamaño del video para cubrir el contenedor */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.video-hero--content {
+    height: 94vh;
+    /* Igualar altura con el encabezado */
+    color: #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    /* Asegurar que el contenido esté sobre el video */
+}
+
+.video-hero--content h1 {
+    font-family: 'Nova Slim', sans-serif;
+    font-size: 6vw;
+    /* Tamaño de fuente responsive */
+    font-weight: 400;
+    transition: 0.5s;
+    margin: 0;
+}
+
+.video-hero--content h1:hover {
+    -webkit-text-stroke: 5px #ccc;
+    /* Borde de texto */
+    color: transparent;
+}
+
+.svg-hero {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+    /* Poner debajo del contenido */
+}
+
+@media screen and (max-width: 800px) {
+    /* Ajustes para pantallas pequeñas */
+    .header {
+        height: 100vh;
+        /* Ajusta la altura para ocupar toda la pantalla en dispositivos móviles */
+    }
+    #headerVideo {
+        height: 100%;
+        /* Ajusta el video para ocupar toda la altura del contenedor */
+        object-fit: cover;
+        /* Ajusta el tamaño del video para cubrir el contenedor */
+    }
+    .video-hero--content h1 {
+        font-size: 10vw;
+        /* Tamaño de fuente responsive */
+    }
+}
+
+
+/* Estilos para la sección de presentacion web */
+
+#presentacion-web {
+    background-color: #0e0e0e;
+    padding: 40px;
+}
+
+#presentacion-web .text {
+    flex: 1;
+    padding-right: 20px;
+    /* Espacio entre el texto y la imagen */
+    text-align: center;
+    color: #fff;
+    /* Color de texto blanco */
+}
+
+#presentacion-web .vendor-title {
+    font-size: calc(0.5vw + 28px);
+    font-weight: 900;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    margin-bottom: 25px;
+    margin-top: 0;
+    font-size: 30px;
+    color: #03fd10;
+    /* Color de acento verde */
+}
+
+#presentacion-web .vendor-info {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+#presentacion-web .info-container {
+    flex: 1;
+    /* Modificado para ocupar el mismo espacio que vendor-container */
+    padding-left: 20px;
+    /* Espacio entre la imagen y el texto */
+    display: flex;
+    /* Para que los elementos hijos se muestren en línea */
+    align-items: center;
+    /* Para alinear verticalmente los elementos hijos */
+}
+
+#presentacion-web .img-container {
+    flex: 1;
+    max-width: 200%;
+    border-radius: 30px;
+}
+
+#presentacion-web .img-container img {
+    border-radius: 30px;
+    margin-left: 10px;
+}
+
+#presentacion-web .service-web {
+    flex: 1;
+    /* Modificado para que el div ocupe el espacio restante */
+    color: #fff;
+    /* Color de texto blanco */
+}
+
+#presentacion-web .info-title {
+    text-align: center;
+    font-size: calc(0.5vw + 24px);
+    font-weight: 900;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    color: #03fd10;
+    /* Color de acento verde */
+}
+
+#presentacion-web .info-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/* Estilos para responsividad */
+
+@media screen and (max-width: 800px) {
+    #presentacion-web .text {
+        padding-right: 0;
+        /* Eliminar espacio a la derecha en pantallas pequeñas */
+        text-align: center;
+        /* Centrar el texto en pantallas pequeñas */
+    }
+    #presentacion-web .img-container {
+        display: none;
+        /* Ocultar la imagen en pantallas pequeñas */
+    }
+    #presentacion-web .info-container {
+        width: 100%;
+        /* Ocupar todo el ancho en modo responsive */
+        padding: 0 20px;
+        /* Añadir espacio a los lados en modo responsive */
+    }
+}
+
+
+/* Estilos para la sección de diseño web */
+
+.diseño-web {
+    background-color: #0e0e0e;
+    padding: 20px;
+    overflow: hidden;
+    /* Se añade esto para que el contenedor abarque todo el contenido float */
+}
+
+
+/* Contenedor principal */
+
+.contenedor {
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    /* Se añade esto para evitar problemas de colapsado de margen */
+}
+
+
+/* Texto */
+
+.texto {
+    float: left;
+    width: 60%;
+}
+
+
+/* Título de la sección */
+
+.titulo-sección {
+    font-size: 28px;
+    color: #fff;
+    /* Cambio de color a blanco para mejor contraste con el fondo */
+}
+
+
+/* Introducción */
+
+.introducción {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ccc;
+    /* Cambio de color a gris claro para mejor legibilidad */
+}
+
+
+/* Aspectos destacados */
+
+.aspectos-destacados {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+
+/* Ilustración */
+
+.ilustración {
+    float: right;
+    width: 40%;
+}
+
+
+/* Servicios */
+
+.contener {
+    width: auto;
+    margin: auto;
+    background-color: #272727;
+}
+
+.contener-2 {
+    width: auto;
+    margin: auto;
+    background-color: #0e0e0e;
+}
+
+#Servicios .encabezado {
+    padding: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#Servicios .encabezado h1 {
+    font-size: calc(0.5vw + 28px);
+    font-weight: 900;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    font-size: 36px;
+    margin-top: 0;
+    margin-bottom: 0px;
+    color: #03fd10;
+}
+
+.container-box {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border: 2px solid #0e0e0e;
+    border-radius: 30px;
+    text-align: center;
+    margin-top: 50px;
+    position: relative;
+    padding: 20px;
+    background-color: rgba(14, 14, 14, 0.5);
+}
+
+.box-2 {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border: 2px solid #272727;
+    border-radius: 30px;
+    text-align: center;
+    margin-top: 50px;
+    position: relative;
+    padding: 20px;
+    background-color: rgba(39, 39, 39, 0.502)
+}
+
+.box img {
+    box-shadow: 50%;
+    width: 60%;
+    height: 60%;
+    transition: all 300ms;
+}
+
+.box-2 img {
+    box-shadow: 50%;
+    width: 60%;
+    height: 60%;
+    transition: all 300ms;
+}
+
+.box h2 {
+    font-size: 16px;
+    margin-top: 10px;
+    transition: all 900ms;
+    color: #03fd10;
+}
+
+.box-2 h2 {
+    font-size: 16px;
+    margin-top: 10px;
+    transition: all 900ms;
+    color: #03fd10;
+}
+
+.box .container-p {
+    width: 100%;
+    height: 150px;
+    font-size: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    padding: 0px 10px;
+}
+
+.box-2 .container-p {
+    width: 100%;
+    height: 150px;
+    font-size: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    padding: 0px 10px;
+}
+
+.box p {
+    font-size: 14px;
+    color: #ffff;
+    opacity: 0;
+    transform: translateY(150px);
+    transition: all 600ms;
+}
+
+.box-2 p {
+    font-size: 14px;
+    color: #ffff;
+    opacity: 0;
+    transform: translateY(150px);
+    transition: all 600ms;
+}
+
+.box:hover p {
+    color: #ccc;
+}
+
+.box-2:hover p {
+    color: #ccc;
+}
+
+.box:hover {
+    background-color: rgba(14, 14, 14, 0.3);
+    border: 2px solid #03fd10;
+    border-radius: 30px;
+}
+
+.box-2:hover {
+    background-color: rgba(39, 39, 39, 0.3);
+    border: 2px solid #03fd10;
+    border-radius: 30px;
+}
+
+.box:hover img {
+    transform: translateY(-60px);
+}
+
+.box-2:hover img {
+    transform: translateY(-60px);
+}
+
+.box:hover h2 {
+    transform: translateY(-60px);
+    color: #03fd10;
+}
+
+.box-2:hover h2 {
+    transform: translateY(-60px);
+    color: #03fd10;
+}
+
+.box:hover .container-p p {
+    transform: translateY(60px);
+    opacity: 1;
+}
+
+.box-2:hover .container-p p {
+    transform: translateY(60px);
+    opacity: 1;
+}
+
+@media screen and (max-width: 800px) {
+    .conter {
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .conter {
+        width: auto;
+    }
+}
+
+
+/* Estilos para la sección de presentacion gamer */
+
+#presentacion-gamer {
+    background-color: #272727;
+    padding: 40px;
+}
+
+#presentacion-gamer .text {
+    flex: 1;
+    padding-right: 20px;
+    /* Espacio entre el texto y la imagen */
+    text-align: center;
+    color: #fff;
+    /* Color de texto blanco */
+}
+
+#presentacion-gamer .vendor-title {
+    font-size: calc(0.5vw + 28px);
+    font-weight: 900;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    margin-bottom: 25px;
+    margin-top: 0;
+    font-size: 30px;
+    color: #03fd10;
+    /* Color de acento verde */
+}
+
+#presentacion-gamer .vendor-info {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+#presentacion-gamer .info-container {
+    flex: 1;
+    /* Modificado para ocupar el mismo espacio que vendor-container */
+    padding-left: 20px;
+    /* Espacio entre la imagen y el texto */
+    display: flex;
+    /* Para que los elementos hijos se muestren en línea */
+    align-items: center;
+    /* Para alinear verticalmente los elementos hijos */
+}
+
+#presentacion-gamer .img-container {
+    flex: 1;
+    max-width: 200%;
+    border-radius: 30px;
+}
+
+#presentacion-gamer .img-container img {
+    border-radius: 30px;
+    margin-right: 70px;
+}
+
+#presentacion-gamer .service-gamer {
+    flex: 1;
+    /* Modificado para que el div ocupe el espacio restante */
+    color: #fff;
+    /* Color de texto blanco */
+}
+
+#presentacion-gamer .info-title {
+    font-size: calc(0.5vw + 24px);
+    font-weight: 900;
+    text-align: center;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    color: #03fd10;
+    /* Color de acento verde */
+}
+
+#presentacion-gamer .info-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/* Estilos para responsividad */
+
+@media screen and (max-width: 800px) {
+    #presentacion-gamer .text {
+        padding-right: 0;
+        /* Eliminar espacio a la derecha en pantallas pequeñas */
+        text-align: center;
+        /* Centrar el texto en pantallas pequeñas */
+    }
+    #presentacion-gamer .img-container {
+        display: none;
+        /* Ocultar la imagen en pantallas pequeñas */
+    }
+    #presentacion-gamer .info-container {
+        width: 100%;
+        /* Ocupar todo el ancho en modo responsive */
+        padding: 0 20px;
+        /* Añadir espacio a los lados en modo responsive */
+    }
+}
+
+
+/* Estilos generales del contenedor del carrusel */
+
+#Portafolio {
+    background-color: #0e0e0e;
+    text-align: center;
+    padding: 50px 0;
+}
+
+#Portafolio2 {
+    background-color: #272727;
+    text-align: center;
+    padding: 50px 0;
+}
+
+
+/* Estilos del encabezado */
+
+.emcabezado {
+    padding: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.titlle {
+    font-size: 36px;
+    margin-top: 0;
+    margin-bottom: 0px;
+    color: #03fd10;
+}
+
+.parrafo {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #ccc;
+}
+
+
+/* Estilos del carrusel */
+
+.owl-carousel {
+    width: 80%;
+    /* Ajusta el ancho del contenedor del carrusel */
+    margin: 0 auto;
+    position: relative;
+}
+
+.owl-carousel .item {
+    position: relative;
+    margin: 0 auto;
+}
+
+
+/* Estilo para el fondo transparente */
+
+.owl-carousel .item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Color de fondo transparente */
+    opacity: 0;
+    /* Inicialmente transparente */
+    transition: opacity 0.3s ease;
+    /* Transición suave de opacidad */
+}
+
+
+/* Estilo para mostrar el fondo transparente al pasar el cursor */
+
+.owl-carousel .item:hover::before {
+    opacity: 1;
+    /* Hacer visible al pasar el cursor */
+}
+
+
+/* Estilos de las imágenes dentro de las diapositivas */
+
+.owl-carousel .item img {
+    max-width: 100%;
+    /* Ajusta el tamaño máximo de la imagen */
+    max-height: 100%;
+    /* Ajusta la altura máxima de la imagen */
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* Estilo para mostrar el nombre de la imagen */
+
+.owl-carousel .item .name-overlay {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1;
+    /* Asegura que el nombre esté por encima de la imagen */
+}
+
+
+/* Estilo al pasar el cursor sobre la imagen */
+
+.owl-carousel .item:hover .name-overlay {
+    display: block;
+}
+
+
+/* Estilos para las flechas de navegación */
+
+.owl-nav {
+    position: relative;
+    top: -100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 100;
+    /* Asegurar que las flechas estén por encima del contenido */
+}
+
+.owl-nav button {
+    position: absolute;
+    /* Hacer que los botones sean absolutos dentro del contenedor del carrusel */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Fondo semi-transparente */
+    color: #03fd10;
+    /* Color del texto */
+    padding: 10px;
+    /* Espaciado interno */
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 100;
+    /* Asegurar que las flechas estén por encima del contenido */
+}
+
+.owl-nav .owl-prev i {
+    color: #03fd10;
+}
+
+.owl-nav .owl-next i {
+    color: #000;
+}
+
+
+/* Estilos para las flechas de navegación */
+
+.owl-prev {
+    left: 10px;
+    /* Posición izquierda del botón anterior */
+    top: 50%;
+    /* Centrar verticalmente */
+    transform: translateY(-50%);
+}
+
+.owl-next {
+    right: 10px;
+    /* Posición derecha del botón siguiente */
+    top: 50%;
+    /* Centrar verticalmente */
+    transform: translateY(-50%);
+}
+
+
+/* Estilos para los puntos de paginación */
+
+.owl-dots {
+    text-align: center;
+    margin-top: 20px;
+    /* Espacio entre las imágenes y los puntos */
+    z-index: 2000;
+}
+
+.owl-dot {
+    display: inline-block;
+    width: 10px;
+    /* Ancho del punto */
+    height: 10px;
+    /* Altura del punto */
+    background-color: rgba(53, 52, 52, 0.8);
+    /* Color de fondo semi-transparente */
+    border-radius: 50%;
+    /* Hacer el punto redondo */
+    margin: 0 5px;
+    /* Espacio entre los puntos */
+    cursor: pointer;
+}
+
+.owl-dot.active {
+    background-color: #03fd10;
+    /* Color de fondo del punto activo */
+}
+
+
+/* Footer */
+
+footer {
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    padding: 2rem 8%;
+    background-color: #0e0e0e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+}
+
+.logo1 {
+    height: 25%;
+    width: 25%;
+    top: 50px;
+    padding: 20px;
+    margin-bottom: 1rem;
+}
+
+.social-icons-container,
+.footer-menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.social-icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    border: 2px solid #ffff;
+    background-image: url(../img/iconos/FacebookBlanco.webp);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 1rem;
+}
+
+.social-icon:hover {
+    background-color: #03fd10;
+    opacity: 0.7;
+}
+
+.social-icon:nth-of-type(2) {
+    background-image: url(../img/iconos/InstagramBlanco.webp);
+}
+
+.social-icon:nth-of-type(3) {
+    background-image: url(../img/iconos/DiscordBlanco.webp);
+}
+
+.social-icon:nth-of-type(4) {
+    background-image: url(../img/iconos/WhatsappBlanco.webp);
+}
+
+.social-icon:nth-of-type(5) {
+    background-image: url(../img/iconos/YoutubeBlanco.webp);
+}
+
+.footer-menu-container {
+    list-style-type: none;
+    color: #f2f2f2;
+    font-size: 18px;
+}
+
+.menu-item a {
+    color: #fff;
+    margin: 1rem 1.5rem;
+    cursor: pointer;
+}
+
+.menu-item a:hover {
+    color: #03fd10;
+}
+
+.copyright {
+    color: #f2f2f2;
+    opacity: 0.3;
+    text-align: center;
+}
+
+footer .wave {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(../img/footer/wave.webp);
+    background-size: 1000px 100px;
+}
+
+footer .wave #wave1 {
+    z-index: 98;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWave 4s linear infinite;
+}
+
+footer .wave #wave2 {
+    z-index: 97;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animateWave_2 4s linear infinite;
+}
+
+footer .wave #wave3 {
+    z-index: 98;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animateWave 3s linear infinite;
+}
+
+footer .wave #wave4 {
+    z-index: 97;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animateWave_2 3s linear infinite;
+}
+
+@keyframes animateWave {
+    0% {
+        background-position-x: 1000px;
+    }
+    100% {
+        background-position-x: 0px;
+    }
+}
+
+@keyframes animateWave_2 {
+    0% {
+        background-position-x: 0px;
+    }
+    100% {
+        background-position-x: 1000px;
+    }
+}
+
+@media (max-width: 800px) {
+    .logo1 {
+        height: 50%;
+        width: 50%;
+    }
+    .social-icon {
+        height: 30px;
+        width: 30px;
+    }
+    .copyright {
+        width: 100%
+    }
+    .menu-item a {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    .logo1 {
+        height: 50%;
+        width: 50%;
+    }
+    .social-icon {
+        height: 31px;
+        width: 31px;
+    }
+    .copyright {
+        width: 100%
+    }
+    .menu-item a {
+        font-size: 15px;
+    }
+}
